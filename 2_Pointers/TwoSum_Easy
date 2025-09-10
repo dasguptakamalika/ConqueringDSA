@@ -16,3 +16,6 @@ class Solution {
         return new int[] {};
     }
 }
+
+// total time complexity is O(n), where n is the length of nums.
+//space complexity is O(n) for the hash map.
