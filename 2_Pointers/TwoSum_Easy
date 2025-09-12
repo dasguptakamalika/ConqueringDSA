@@ -16,6 +16,6 @@ class Solution {
         return new int[] {};
     }
 }
-
+//It’s not about the algorithm — it’s about satisfying the compiler’s rule.
 // total time complexity is O(n), where n is the length of nums.
 //space complexity is O(n) for the hash map.
