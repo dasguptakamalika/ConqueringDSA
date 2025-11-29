@@ -10,7 +10,7 @@ class Solution {
 
             // Move the pointer at the shorter line
             if (height[left] < height[right]) {
-                left++;
+                left++; 
             } else {
                 right--;
             }
