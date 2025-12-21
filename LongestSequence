@@ -1,7 +1,7 @@
 import java.util.HashSet;
 
 class Solution {
-    public int longestConsecutive(int[] nums) {
+    public int longestConsecutive(int[] nums) {   //the caller initialises the arr
         if (nums == null || nums.length == 0) {
             return 0;
         }
@@ -35,4 +35,3 @@ class Solution {
         return longest;
     }
 }
- 
