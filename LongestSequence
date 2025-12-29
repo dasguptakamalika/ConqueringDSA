@@ -11,7 +11,7 @@ class Solution {
             set.add(nums[i]);
         }
 
-        int longest = 0;
+        int longest = 0; 
 
         // Loop over the UNIQUE numbers from the set
         for (int num : set) {
