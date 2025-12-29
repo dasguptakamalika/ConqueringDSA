@@ -8,7 +8,7 @@ class Solution {
             int area = h * (right - left); 
             if (area > max) max = area;                      //ahhhhh -_-
 
-            // Move the pointer at the shorter line
+            // Move the pointer at the shorter line 
             if (height[left] < height[right]) {
                 left++; 
             } else {
