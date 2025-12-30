@@ -8,7 +8,7 @@ class Solution {
         
         for (int i = 0; i < s.length(); i++) {
             freq[s.charAt(i) - 'a']++;
-            freq[t.charAt(i) - 'a']--;           //consider the examples like car and cat , unless and until they are from from indices, cancellation wont work.
+            freq[t.charAt(i) - 'a']--;           //consider the examples like car and cat , unless and until they are from same indices, cancellation wont work.
                                                  //count values indicate something extra or less , hence we have the count
         }
 
