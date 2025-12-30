@@ -30,7 +30,9 @@ class Solution {
                                                                     Why this is enough
                                                                     0 → letter is balanced
                                                                     +1 → extra in s
-                                                                    -1 → extra in t*/
+                                                                    -1 → extra in t
+                                                                    Which is true for anagram problems.
+                                                                    If lengths were different, this would throw IndexOutOfBoundsException.*/
 
         for (int count : freq) {                 
             if (count != 0) {
