@@ -17,7 +17,20 @@ class Solution {
                                                                     if (count != 0) {
                                                                         return false;
                                                                     }
-                                                                } */
+                                                                     }                                                           
+                                                                    freq[0]  = 0   // 'a'
+                                                                    freq[2]  = 0   // 'c'
+                                                                    freq[17] = +1  // 'r'
+                                                                    freq[19] = -1  // 't'
+                                                                    The for-each loop is simply checking each of these numbers.
+                                                                    It doesn’t care which letter it is.
+                                                                    It only asks:
+                                                                    
+                                                                    “Is this number zero or not?”
+                                                                    Why this is enough
+                                                                    0 → letter is balanced
+                                                                    +1 → extra in s
+                                                                    -1 → extra in t*/
 
         for (int count : freq) {                 
             if (count != 0) {
