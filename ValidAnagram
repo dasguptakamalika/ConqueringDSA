@@ -32,7 +32,8 @@ class Solution {
                                                                     +1 → extra in s
                                                                     -1 → extra in t
                                                                     Which is true for anagram problems.
-                                                                    If lengths were different, this would throw IndexOutOfBoundsException.*/
+                                                                    If lengths were different, this would throw IndexOutOfBoundsException.
+                                                                    Also, why -a? cause lower case*/
 
         for (int count : freq) {                 
             if (count != 0) {
