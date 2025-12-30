@@ -11,8 +11,15 @@ class Solution {
             freq[t.charAt(i) - 'a']--;           //consider the examples like car and cat , unless and until they are from from indices, cancellation wont work.
                                                  //count va;ues indicate something extra or less , hence we have the count
         }
-        
-        for (int count : freq) {
+
+                                                               /* for (int i = 0; i < freq.length; i++) {
+                                                                    int count = freq[i];
+                                                                    if (count != 0) {
+                                                                        return false;
+                                                                    }
+                                                                } */
+
+        for (int count : freq) {                 
             if (count != 0) {
                 return false;
             }
