@@ -14,3 +14,8 @@ public boolean isAnagramCaseSensitive(String s, String t) {
 
     return true;
 }
+/*// Lowercase-only anagram: use int[26] and subtract 'a' to map 'a'->0, 'b'->1, ..., 'z'->25.
+// ⚠️ Without subtracting 'a', 'a' = 97 would access freq[97] in size 26 array → ArrayIndexOutOfBounds!
+// Full ASCII / case-sensitive: use int[128], use char's ASCII value directly as index.
+// Works for 'A' = 65, 'a' = 97, symbols, digits, etc., no subtraction needed.
+*/
