@@ -18,4 +18,36 @@ public boolean isAnagramCaseSensitive(String s, String t) {
 // ⚠️ Without subtracting 'a', 'a' = 97 would access freq[97] in size 26 array → ArrayIndexOutOfBounds!
 // Full ASCII / case-sensitive: use int[128], use char's ASCII value directly as index.
 // Works for 'A' = 65, 'a' = 97, symbols, digits, etc., no subtraction needed.
+1️⃣ Initialize
+int[] freq = new int[128]; // all elements initialized to 0
+s = "CA";
+t = "AC";
+Initially: freq[0..127] = 0
+2️⃣ Step 0 (i = 0)
+s.charAt(0) = 'C' → ASCII 67
+t.charAt(0) = 'A' → ASCII 65
+Increment s character:
+freq[67]++; // freq[67] = 0 + 1 = 1
+Decrement t character:
+freq[65]--; // freq[65] = 0 - 1 = -1
+Array snapshot (only nonzero values):
+freq[65] = -1
+freq[67] = 1
+3️⃣ Step 1 (i = 1)
+s.charAt(1) = 'A' → ASCII 65
+t.charAt(1) = 'C' → ASCII 67
+Increment s character:
+freq[65]++; // freq[65] = -1 + 1 = 0
+Decrement t character:
+freq[67]--; // freq[67] = 1 - 1 = 0
+Array snapshot (only nonzero values):
+all zeros
+✅ Step 4: Check if all zeros
+Loop over freq[0..127] → all are 0
+Conclusion: "CA" is an anagram of "AC" (case-sensitive)
+4️⃣ Key points
+++ increases the count at the ASCII index of s
+-- decreases the count at the ASCII index of t
+Cancellation can happen across different indices, not necessarily the same index
+At the end, all counts must be zero for an anagram
 */
