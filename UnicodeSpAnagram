@@ -48,4 +48,142 @@ public boolean isAnagramUnicode(String s, String t) {
 /*Most emojis (like 😄, 🚀, 💯) are outside the BMP (Basic Multilingual Plane)
 In Java, char = 16 bits → can only store code points 0–65535 (U+0000 to U+FFFF)
 Emoji code points are above U+FFFF, so they require two chars, called a surrogate pair
+
+Absolutely! Let’s go **line by line in plain, layman language** for your “easy” Unicode version.
+
+Here’s your code again:
+
+```java
+public boolean isAnagramUnicode(String s, String t) {
+    if (s.length() != t.length()) return false;
+
+    Map<Character, Integer> freq = new HashMap<>();
+
+    for (int i = 0; i < s.length(); i++) {
+        freq.put(s.charAt(i), freq.getOrDefault(s.charAt(i), 0) + 1);
+        freq.put(t.charAt(i), freq.getOrDefault(t.charAt(i), 0) - 1);
+    }
+
+    for (int count : freq.values()) {
+        if (count != 0) return false;
+    }
+
+    return true;
+}
+```
+
+---
+
+### **Line by line explanation**
+
+1️⃣ **Method signature**
+
+```java
+public boolean isAnagramUnicode(String s, String t)
+```
+
+* This defines a function that **checks if two strings are anagrams**.
+* Returns **true** if they are, **false** if not.
+* Takes two strings `s` and `t` as input.
+
+---
+
+2️⃣ **Check lengths**
+
+```java
+if (s.length() != t.length()) return false;
+```
+
+* First, if the strings are **different lengths**, they **cannot** be anagrams.
+* Immediately return `false` — no need to check further.
+
+---
+
+3️⃣ **Create a map to count characters**
+
+```java
+Map<Character, Integer> freq = new HashMap<>();
+```
+
+* A `HashMap` is like a **dynamic counting box**:
+
+  * **Key** = the character
+  * **Value** = how many times it appears (or the net difference between the two strings)
+* Works for any character, including special symbols (but not emojis that need 2 `char`s).
+
+---
+
+4️⃣ **Loop over each character**
+
+```java
+for (int i = 0; i < s.length(); i++) {
+```
+
+* Go **character by character** through the strings.
+* `i` is the current position (index) in both strings.
+
+---
+
+5️⃣ **Increment count for s**
+
+```java
+freq.put(s.charAt(i), freq.getOrDefault(s.charAt(i), 0) + 1);
+```
+
+* `s.charAt(i)` → the current character in `s`
+* `freq.getOrDefault(..., 0)` → if the character isn’t in the map yet, assume 0
+* `+1` → add 1 because this character appears once more in `s`
+* Effect: updates the map to **count this character in `s`**
+
+---
+
+6️⃣ **Decrement count for t**
+
+```java
+freq.put(t.charAt(i), freq.getOrDefault(t.charAt(i), 0) - 1);
+```
+
+* `t.charAt(i)` → current character in `t`
+* `-1` → subtract 1 because this character appears in `t`
+* Effect: **cancels out** the count if the same character appeared in `s`
+
+> Idea: After this loop, if the strings are anagrams, **all counts in the map should be 0**
+
+---
+
+7️⃣ **Check all counts**
+
+```java
+for (int count : freq.values()) {
+    if (count != 0) return false;
+}
+```
+
+* Go through **all the counts** in the map.
+* If any count ≠ 0 → the strings have **different numbers of that character** → not an anagram
+* Return `false` immediately if a mismatch is found
+
+---
+
+8️⃣ **Return true**
+
+```java
+return true;
+```
+
+* If all counts are 0 → all characters match in number → strings are anagrams
+* Return `true`
+
+---
+
+### **Layman summary**
+
+* Make sure the strings are **same length**
+* Use a **map to count characters** in `s` and subtract counts for `t`
+* If all counts cancel out → ✅ anagram
+* If any count is leftover → ❌ not an anagram
+
+---
+
+
 */
