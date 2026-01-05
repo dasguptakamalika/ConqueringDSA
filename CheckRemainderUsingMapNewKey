@@ -1,0 +1,92 @@
+import java.util.*;
+
+public class GroupByRemainder {
+    public static List<List<Integer>> groupByRemainder(int[] nums) {
+        // Map key: remainder, value: list of numbers
+        Map<Integer, List<Integer>> map = new HashMap<>();
+
+        for (int num : nums) {
+            int key = num % 3;
+
+            // If key doesn't exist, create new list
+            if (!map.containsKey(key)) {
+                map.put(key, new ArrayList<>());
+            }
+
+            // Add number to the list
+            map.get(key).add(num);
+        }
+
+        // Return all groups as List<List<Integer>>
+        return new ArrayList<>(map.values());
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5, 6};
+        List<List<Integer>> result = groupByRemainder(nums);
+
+        System.out.println(result);
+        // Example output: [[3, 6], [1, 4], [2, 5]]
+    }
+}
+
+
+
+/*
+[1, 2, 3, 4, 5, 6]
+
+Map<Integer, List<Integer>> map;
+means:
+“For each key, I want to store many values.”
+Not one value. Many.
+That’s why the value is a List.
+
+What happens inside the loop (step by step)
+Case 1️⃣ Key does NOT exist yet
+Example:
+num = 4
+key = 4 % 3 = 1
+Check:
+map.containsKey(1) // false
+So we do:
+map.put(1, new ArrayList<>());
+Now the map looks like:
+1 → []
+⚠️ Important:
+The list is empty right now.
+So we must add the number.
+That’s why we do:
+
+map.get(1).add(4);
+Map becomes:
+1 → [4]
+Case 2️⃣ Key ALREADY exists
+Next number:
+num = 7
+key = 7 % 3 = 1
+Check:
+map.containsKey(1) // true
+We do NOT create a new list.
+We reuse the existing one:
+
+map.get(1).add(7);
+Map becomes:
+1 → [4, 7]
+🔑 The key idea (this is the click)
+Each key owns ONE list.
+Every value that belongs to that key goes into that same list.
+So:
+New key → create list → add first value
+Existing key → add another value to same list
+The add() happens every time, not only for existing keys.
+Why not replace the value instead?
+If we did this:
+map.put(key, num);
+We would lose previous values.
+Example:
+
+1 → 4
+Then:
+1 → 7 // 4 is gone ❌
+That breaks grouping.
+*/
