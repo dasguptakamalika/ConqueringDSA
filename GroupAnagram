@@ -1,24 +1,30 @@
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
-
+        
         for (String s : strs) {
-            int[] count = new int[26]; // count letters
-            for (char c : s.toCharArray()) {
-                count[c - 'a']++;
+            // Sort the string to create a key
+            char[] chars = s.toCharArray();
+            Arrays.sort(chars);
+            String key = new String(chars);
+            
+            // If key doesn't exist, create a new list for it
+            if (!map.containsKey(key)) {
+                map.put(key, new ArrayList<>());
             }
-
-            // build a key from the counts
-            StringBuilder sb = new StringBuilder();
-            for (int i : count) {
-                sb.append('#'); // separator to avoid collisions
-                sb.append(i);
-            }
-            String key = sb.toString();
-
-            map.computeIfAbsent(key, k -> new ArrayList<>()).add(s);
+            
+            // Add the original string to the list
+            map.get(key).add(s);
         }
-
-        return new ArrayList<>(map.values()); 
+        
+        return new ArrayList<>(map.values());
     }
 }
+/* In Java, a Map key can NOT exist without a value.
+So when you do:
+map.put(key, new ArrayList<>());
+you are:
+creating the key
+AND assigning it a value
+that value happens to be an empty ArrayList
+There is no such thing as a “key-only” entry in a Java Map. */
