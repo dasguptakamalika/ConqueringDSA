@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class GroupByFirstLetterSimple {
+    public static List<List<String>> group(String[] words) {
+        Map<Character, List<String>> map = new HashMap<>();
+
+        for (String w : words) {
+            char key = w.charAt(0);
+
+            if (!map.containsKey(key)) {
+                map.put(key, new ArrayList<>());
+            }
+
+            map.get(key).add(w);
+        }
+
+        return new ArrayList<>(map.values());
+    }
+
+    public static void main(String[] args) {
+        String[] words = {"hi", "hello", "hey"};
+        System.out.println(group(words));
+        // Output: [[hi, hello, hey]] because all start with 'h'
+    }
+}
