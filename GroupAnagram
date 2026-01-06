@@ -13,7 +13,7 @@ class Solution {
                 map.put(key, new ArrayList<>());
             }
             
-            // Add the original string to the list
+            // Add the original string to the list,That line is what actually puts data into the buckets.
             map.get(key).add(s);
         }
         
