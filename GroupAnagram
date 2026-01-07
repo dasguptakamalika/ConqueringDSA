@@ -29,3 +29,34 @@ creating the key
 AND assigning it a value
 that value happens to be an empty ArrayList
 There is no such thing as a “key-only” entry in a Java Map. */
+/*s = "eat"
+chars = ['e','a','t']
+sorted → ['a','e','t']
+key = "aet"
+Map before:
+(empty)
+Key doesn’t exist → create bucket:
+"aet" → []
+Now add value:
+map.get("aet").add("eat");
+Map becomes:
+"aet" → ["eat"]
+Iteration 2
+s = "tea"
+chars = ['t','e','a']
+sorted → ['a','e','t']
+key = "aet"
+Key exists → reuse same bucket
+map.get("aet").add("tea");
+Map now:
+"aet" → ["eat", "tea"]
+Iteration 3
+s = "tan"
+sorted → "ant"
+Key not found → create new bucket:
+"ant" → []
+Add value:
+"ant" → ["tan"]
+Final Map in memory 🧠
+"aet" → ["eat", "tea"]
+"ant" → ["tan"] */
