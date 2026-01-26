@@ -10,7 +10,7 @@ class Solution {
         return false;
     }
 }
-if (!seen.add(num))
+if (!seen.add(num)) 
    ↓
 "If I CAN'T add this number (because it's already there)"
    ↓
