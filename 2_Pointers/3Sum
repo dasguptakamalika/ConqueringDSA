@@ -9,7 +9,7 @@
             int left = i + 1, right = nums.length - 1; 
             while (left < right) {
                 long sum = (long) nums[i] + nums[left] + nums[right]; // avoid overflow
-                if (sum == 0) { 
+                if (sum == 0) {  
                     res.add(Arrays.asList(nums[i], nums[left], nums[right]));
                     // skip duplicates for left and right 
                     int lv = nums[left], rv = nums[right];
