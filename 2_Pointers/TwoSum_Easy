@@ -11,7 +11,7 @@
               
             map.put(nums[i], i); 
         }
-         
+          
         // According to the problem, a solution always exists
         return new int[] {};
     }
