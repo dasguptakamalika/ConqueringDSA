@@ -12,10 +12,27 @@
             map.put(nums[i], i); 
         }
            
-        // According to the problem, a solution always exists
+        // According to the problem, a solution always exists 
         return new int[] {};
     }
 }
 //It’s not about the algorithm — it’s about satisfying the compiler’s rule.
 // total time complexity is O(n), where n is the length of nums.
 //space complexity is O(n) for the hash map.
+
+/* class Solution {
+    public int[] twoSum(int[] nums, int target) {
+
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+
+                if (nums[i] + nums[j] == target) {
+                    return new int[] { i, j };
+                }
+            }
+        }
+
+        return new int[] {};
+    }
+}
+*/
