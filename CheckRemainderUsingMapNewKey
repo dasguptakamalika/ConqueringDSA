@@ -1,4 +1,4 @@
-import java.util.*;
+ import java.util.*;
 
 public class GroupByRemainder {
     public static List<List<Integer>> groupByRemainder(int[] nums) {
