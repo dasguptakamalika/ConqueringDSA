@@ -18,7 +18,7 @@ class Solution {
             map.get(key).add(s);
         }
         
-        return new ArrayList<>(map.values());
+        return new ArrayList<>(map.values()); 
     }
 }
 /* In Java, a Map key can NOT exist without a value.
