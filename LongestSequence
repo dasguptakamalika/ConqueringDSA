@@ -14,7 +14,7 @@ class Solution {
         int longest = 0; 
  
         // Loop over the UNIQUE numbers from the set
-        for (int num : set) {
+        for (int num : set) { 
             // Only start counting if num-1 is NOT present
             if (!set.contains(num - 1)) {
 
