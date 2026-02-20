@@ -14,7 +14,7 @@ public class GroupByFirstLetterSimple {
             map.get(key).add(w);
         }
 
-        return new ArrayList<>(map.values());
+        return new ArrayList<>(map.values()); 
     }
 
     public static void main(String[] args) {
