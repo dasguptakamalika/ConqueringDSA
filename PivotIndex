@@ -1,0 +1,32 @@
+
+
+/* nums = [0, 1, -1, 0]
+Check:
+index 0 → left = 0, right = 0 ✔️ pivot
+index 3 → left = 0, right = 0 ✔️ pivot
+👉 Answer = 0, not 3
+Because 0 is the leftmost pivot
+
+3️⃣ Check each index as a possible pivot
+🔹 Index = 0
+Left side:
+Elements before index 0 → ❌ none
+So left sum = 0
+✔️ This is explicitly stated in the problem
+Right side:
+Elements after index 0 → [1, -1]
+Right sum = 1 + (-1) = 0
+✅ Left sum == Right sum
+👉 Index 0 IS a pivot
+🔹 Index = 1 (just to understand)
+Left side:
+[2] → sum = 2
+Right side:
+[-1] → sum = -1
+❌ Not equal → not a pivot
+🔹 Index = 2
+Left side:
+[2, 1] → sum = 3
+Right side:
+none → sum = 0
+❌ Not equal  */
