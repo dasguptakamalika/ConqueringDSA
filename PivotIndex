@@ -1,4 +1,4 @@
-
+//totalSum includes the pivot element, and pivot should not belong to either side.
 
 /* nums = [0, 1, -1, 0]
 Check:
