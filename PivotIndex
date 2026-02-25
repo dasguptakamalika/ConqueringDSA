@@ -1,4 +1,4 @@
-class Solution 
+ class Solution 
 {
     public int pivotIndex(int[] nums)
        {
@@ -25,6 +25,34 @@ for(int i=0;i<nums.length ;i++)
 }
 
 
+#brute force
+class Solution {
+    public int pivotIndex(int[] nums) {
+        int n = nums.length;
+
+        for (int i = 0; i < n; i++) {
+
+            int leftSum = 0;
+            int rightSum = 0;
+
+            // calculate left sum
+            for (int l = 0; l < i; l++) {
+                leftSum += nums[l];
+            }
+
+            // calculate right sum
+            for (int r = i + 1; r < n; r++) {
+                rightSum += nums[r];
+            }
+
+            if (leftSum == rightSum) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+}
 
 
 //totalSum includes the pivot element, and pivot should not belong to either side.
