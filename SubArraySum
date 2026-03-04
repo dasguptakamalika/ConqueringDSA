@@ -5,18 +5,28 @@ class Solution {
         int prefixSum = 0;
         
         Map<Integer, Integer> map = new HashMap<>();
-        map.put(0, 1);  // Base case
+        map.put(0, 1); // base case: prefix sum of 0 seen once
         
         for (int num : nums) {
-            prefixSum += num;
+            prefixSum += num;                                           // step 1: update prefix sum
             
-            if (map.containsKey(prefixSum - k)) {
-                count += map.get(prefixSum - k);
-            }
+            int target = prefixSum - k;                                // step 2: what are we looking for?
+            int subarraysFound = map.getOrDefault(target, 0);         // step 3: how many times did we see it?
+            count += subarraysFound;                                   // step 4: add to count
             
-            map.put(prefixSum, map.getOrDefault(prefixSum, 0) + 1);
+            int currentFreq = map.getOrDefault(prefixSum, 0);        // step 5: get current freq of this prefixSum
+            int newFreq = currentFreq + 1;                            // step 6: add 1
+            map.put(prefixSum, newFreq);                              // step /7: store it back
         }
         
         return count;
     }
 }
+
+
+/*// what getOrDefault is doing under the hood
+if (wordCount.containsKey(word)) {
+    return wordCount.get(word);  // found it, return the value
+} else {
+    return 0;                    // not found, return 0
+}*/
