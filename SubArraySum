@@ -1,25 +1,25 @@
 class Solution {
     public int subarraySum(int[] nums, int k) {
         
-        int count = 0;
-        int prefixSum = 0;
+        int totalSubarraysFound = 0;
+        int runningSum = 0;
         
-        Map<Integer, Integer> map = new HashMap<>();
-        map.put(0, 1); // base case: prefix sum of 0 seen once
+        Map<Integer, Integer> timesEachSumWasSeen = new HashMap<>();
+        timesEachSumWasSeen.put(0, 1); // base case: prefix sum of 0 seen once
         
         for (int num : nums) {
-            prefixSum += num;                                           // step 1: update prefix sum
+            runningSum += num;                                                              // step 1: update running sum
             
-            int target = prefixSum - k;                                // step 2: what are we looking for?
-            int subarraysFound = map.getOrDefault(target, 0);         // step 3: how many times did we see it?
-            count += subarraysFound;                                   // step 4: add to count
+            int sumWeNeedToHaveSeenBefore = runningSum - k;                                // step 2: what are we looking for?
+            int howManyTimesWeFoundIt = timesEachSumWasSeen.getOrDefault(sumWeNeedToHaveSeenBefore, 0);  // step 3: how many times did we see it?
+            totalSubarraysFound += howManyTimesWeFoundIt;                                  // step 4: add to total
             
-            int currentFreq = map.getOrDefault(prefixSum, 0);        // step 5: get current freq of this prefixSum
-            int newFreq = currentFreq + 1;                            // step 6: add 1
-            map.put(prefixSum, newFreq);                              // step /7: store it back
+            int howManyTimesThisSumSeenSoFar = timesEachSumWasSeen.getOrDefault(runningSum, 0);  // step 5: get current freq
+            int updatedFrequency = howManyTimesThisSumSeenSoFar + 1;                             // step 6: add 1
+            timesEachSumWasSeen.put(runningSum, updatedFrequency);                               // step 7: store it back
         }
         
-        return count;
+        return totalSubarraysFound;
     }
 }
 
