@@ -1,0 +1,81 @@
+import java.util.*;
+public class Main1
+{
+    public static void main(String[] args)
+    {
+      Map<String,Integer> map = new HashMap<>();
+     //add values
+        map.put("Orange",202);
+        map.put("Apple",100);
+        map.put("Pear",4);
+
+        System.out.println(map);
+
+        //access a value. we always search by KEY
+        int or =  map.get("Orange");
+        System.out.println(or);
+
+        System.out.println(map.get("Pear"));
+
+        System.out.println(map.get("Banana"));  //key doesnt exist
+        map.get("Orange"); // need to put in a variable or sysout
+
+        System.out.println(map.get(1));  //key doesn't exist
+
+        //whether or not a key exists or not
+        if(map.containsKey("Pear"))
+        {
+            System.out.println("Present");
+        }
+
+        //map.containsKey("Guava");
+
+        if(map.containsKey("orange"))             // boolean return type for containsKey and case sensitive
+        {
+            System.out.println("It's thereeeee");
+        }
+        else {
+            System.out.println("Not therrrrrrre");
+        }
+
+if(map.containsValue(10))
+{
+    System.out.println("Y");
+}
+else {
+    System.out.println("N");
+}
+
+//Update a value (Increment)
+        int current = map.getOrDefault("apple",0);
+map.put("apple", current + 1);
+System.out.println(map);
+
+
+    }
+}
+
+map.getOrDefault("apple", 0)
+Looks for the key "apple" exactly as written (case-sensitive).
+Your map has "Apple" with capital A.
+"apple" (all lowercase) does not exist, so getOrDefault returns 0.
+current + 1
+current is 0 → add 1 → result is 1.
+map.put("apple", 1)
+Inserts a new key "apple" (lowercase) with value 1.
+It does not update the original "Apple" key because Java maps are case-sensitive.
+
+
+Result = {Orange=202, Apple=100, Pear=4, apple=1}
+
+
+
+
+
+why the getOrdefault ?
+Without getOrDefault:
+Missing key → map.get returns null
+null + 1 → NullPointerException
+With getOrDefault:
+Missing key → returns default (0)
+Safe to increment → works even if key doesn’t exist
