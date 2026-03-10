@@ -71,7 +71,7 @@ Result = {Orange=202, Apple=100, Pear=4, apple=1}
 
 
 
-
+//null vs default
 why the getOrdefault ?
 Without getOrDefault:
 Missing key → map.get returns null
