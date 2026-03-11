@@ -9,6 +9,16 @@ public class Main1
         map.put("Apple",100);
         map.put("Pear",4);
 
+/*Map is the HashMap that stores your data
+Map.Entry is just used inside the for-each loop to iterate over it
+
+Map.Entry doesn't exist on its own — it needs a Map to get the entries from. 
+So you always need the Map first before you can use Map.Entry.
+also saves double look up when need key inside entryset and not again using keyset*/
+for(Map.Entry<String,Integer> entry : map.entrySet())
+        {
+            System.out.println("key: " + " " + entry.getKey()  + " " + "value" + " "+ entry.getValue());
+        }
         System.out.println(map);
 
         //access a value. we always search by KEY
