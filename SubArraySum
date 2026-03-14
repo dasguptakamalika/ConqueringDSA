@@ -37,3 +37,8 @@ map.put(sum, freq + 1);
             System.out.println("count: " + count);
         }
     }
+
+
+
+//TimeSpaceBrute ForceO(n²)O(1)HashMapO(n)O(n)
+//The HashMap solution trades space for speed — you use more memory but cut the time in half. 
