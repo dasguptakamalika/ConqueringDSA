@@ -1,0 +1,24 @@
+
+Space Complexity:
+Count how much extra memory you use as input grows.
+
+Pattern	                              SC
+No extra storage	                    O(1)
+Storing n elements (array, map, list)	O(n)
+Storing n² elements	                  O(n²)
+
+
+Simple rule of thumb:
+* Look at your loops for time complexity
+* Look at your data structures for space complexity
+
+Time Complexity:
+Count how many times your code repeats work as input grows.
+Pattern	                           TC
+Single loop	                       O(n)
+Nested loop	                       O(n²)
+Loop inside loop inside loop	     O(n³)
+No loop, just statements           O(1) 
+
+Cutting input in half 
+each step (binary search)          O(log n)
