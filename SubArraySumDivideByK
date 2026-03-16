@@ -16,7 +16,14 @@ brute
 
     return count;
 }
-
+In the prefix-sum + hashmap approach, the map stores the remainder as the key and the number of times that remainder has
+occurred so far as the value. When we do count += map.get(remainder), we are adding the current value stored for that 
+remainder to the total count, because each previous occurrence of the same remainder forms a valid subarray with the 
+current sum. Then, when we update the map with map.put(remainder, map.getOrDefault(remainder, 0) + 1), the getOrDefault 
+reads the existing value if the key is already present, or uses 0 if the key isn’t in the map yet. We then add 1 to count 
+this current prefix sum and write it back. So, the default value is only used if the key doesn’t exist, otherwise it’s ignored, 
+and the existing value is incremented by 1. This ensures that the map always
+correctly tracks the number of times each remainder has appeared, whether it’s a new remainder or one we’ve seen before.
 In coding problems like LC 974, we need all remainders consistent to store in hashmap.
 If Java gives negatives, they won’t match the positives in the map.
 Adding k is a simple, safe mathematical trick to ensure the remainder is always in 0..k-1.
