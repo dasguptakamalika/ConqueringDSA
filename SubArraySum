@@ -1,44 +1,28 @@
-/*Flow per iteration
-1️⃣ Add number to running sum
-sum += num
-2️⃣ Check if a previous sum makes a subarray = k
-if (map.containsKey(sum - k))
-If true → increase count
-If false → do nothing
-3️⃣ Regardless of the if, store the current sum
-map.put(sum, ...)
-1. Update running sum
-2. Check if (sum - k) exists → increase count
-3. Record this sum in map */    
+import java.util.HashMap;
+import java.util.Map;
 
-            int sum=0;
-            int count = 0;
-            int target=1;
-            int arr1[] = {0,1,2};
+class Solution {
+    public int subarraySum(int[] nums, int k) {
 
-            Map<Integer,Integer> map= new HashMap<>();
-            map.put(0,1);
-            for(int i =0; i < arr1.length; i++)
-            {
-                
-                sum+=arr1[i];
-                if(map.containsKey(sum-target))
-                {
-                   count+=map.get(sum-target);
+        int sum = 0;
+        int count = 0;
 
-                }
-                map.put(sum, map.getOrDefault(sum,0) +1);
-/*int freq = map.getOrDefault(sum, 0);
-map.put(sum, freq + 1);
-*/
-         ;
-            }
+        // Map stores prefix sums and their frequencies
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, 1); // Base case: sum 0 seen once
 
-            System.out.println("count: " + count);
+        for (int num : nums) {
+
+            // 1️⃣ Update running sum
+            sum += num;
+
+            // 2️⃣ Check if (sum - k) exists → add frequency to count
+            count += map.getOrDefault(sum - k, 0);
+
+            // 3️⃣ Record/update current sum in map
+            map.put(sum, map.getOrDefault(sum, 0) + 1);
         }
+
+        return count;
     }
-
-
-
-//TimeSpaceBrute ForceO(n²)O(1)HashMapO(n)O(n)
-//The HashMap solution trades space for speed — you use more memory but cut the time in half. 
+}
