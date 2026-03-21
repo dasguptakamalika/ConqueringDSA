@@ -9,7 +9,7 @@ If false → do nothing
 map.put(sum, ...)
 1. Update running sum
 2. Check if (sum - k) exists → increase count
-3. Record this sum in map */
+3. Record this sum in map */    
 
             int sum=0;
             int count = 0;
