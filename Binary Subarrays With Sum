@@ -14,7 +14,7 @@ class Solution {
 
         for (int num : nums) {
 
-            // 1️⃣ Add current number to running sum
+            // 1️⃣ Add current number to running sum 
             sum += num;
 
             // 2️⃣ Check if there is a previous prefix sum that makes subarray = goal
@@ -28,3 +28,11 @@ class Solution {
     }
 }
 //yes, you first calculate m.getOrDefault(sum,0)+1 and then put it in the map with key sum.
+
+nums = [1,0,1,0,1], goal = 2
+i	nums[i]	sum (prefix)	sum-goal	map lookup	count update	map after update
+0	1	1	-1	0	0	{0:1, 1:1}
+1	0	1	-1	0	0	{0:1, 1:2}
+2	1	2	0	1	1	{0:1,1:2,2:1}
+3	0	2	0	1	2	{0:1,1:2,2:2}
+4	1	3	1	2	4	{0:1,1:2,2:2,3:1}
