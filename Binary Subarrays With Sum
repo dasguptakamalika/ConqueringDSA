@@ -27,3 +27,4 @@ class Solution {
         return count;
     }
 }
+//yes, you first calculate m.getOrDefault(sum,0)+1 and then put it in the map with key sum.
