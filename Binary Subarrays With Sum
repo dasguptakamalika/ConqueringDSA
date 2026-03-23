@@ -29,6 +29,13 @@ class Solution {
 }
 //yes, you first calculate m.getOrDefault(sum,0)+1 and then put it in the map with key sum.
 
+It always **checks the key, not the value** in the map. So `m.getOrDefault(sum,0)` means “look for this key = sum; 
+if it exists, return its value (how many times we’ve seen it), otherwise return 0.” Then you add 1 and update the same key
+using `m.put(sum, ...)`, which either creates the key (if it wasn’t there) or increments its existing value. For example, 
+if `sum = 1` and map is `{0:1}`, it becomes `{0:1,1:1}` (first time), and next time `sum = 1`, it becomes `{0:1,1:2}`. 
+So the map tracks **frequency of each prefix sum**, and order doesn’t matter—only the key and its count.
+
+
 nums = [1,0,1,0,1], goal = 2
 i	nums[i]	sum (prefix)	sum-goal	map lookup	count update	map after update
 0	1	1	-1	0	0	{0:1, 1:1}
