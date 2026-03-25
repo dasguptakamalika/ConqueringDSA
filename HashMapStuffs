@@ -17,7 +17,7 @@ So you always need the Map first before you can use Map.Entry.
 also saves double look up when need key inside entryset and not again using keyset*/
 for(Map.Entry<String,Integer> entry : map.entrySet())
         {
-            System.out.println("key: " + " " + entry.getKey()  + " " + "value" + " "+ entry.getValue());
+            System.out.println("key: " + " " + entry.getKey()  + " " + "value" + " "+ entry.getValue()); //must use with entrySet
         }
         System.out.println(map);
 
