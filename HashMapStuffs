@@ -60,7 +60,7 @@ else {
         int current = map.getOrDefault("apple",0);
 map.put("apple", current + 1);
 System.out.println(map);
-
+    
 
     }
 }
