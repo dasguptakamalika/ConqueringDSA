@@ -8,7 +8,7 @@
         freq.put(t.charAt(i), freq.getOrDefault(t.charAt(i), 0) - 1);
     }
 
-    for (int count : freq.values()) {
+    for (int count : freq.values()) { 
         if (count != 0) return false;
     }
 
