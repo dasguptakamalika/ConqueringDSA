@@ -7,7 +7,7 @@ class Solution {
             char[] chars = s.toCharArray();
             Arrays.sort(chars);
             String key = new String(chars);
-            
+             
             // If key doesn't exist, create a new list for it
             if (!map.containsKey(key)) {
                 map.put(key, new ArrayList<>());
