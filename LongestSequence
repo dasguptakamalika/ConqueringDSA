@@ -1,7 +1,7 @@
 import java.util.HashSet;
 
 class Solution {
-    public int longestConsecutive(int[] nums) {   //the caller initialises the arr
+    public int longestConsecutive(int[] nums) {   //the caller initialises the arr 
         if (nums == null || nums.length == 0) {
             return 0;
         }
@@ -17,7 +17,7 @@ class Solution {
         for (int num : set) { 
             // Only start counting if num-1 is NOT present
             if (!set.contains(num - 1)) {
-
+ 
                 int currentNum = num;
                 int currentStreak = 1;
 
