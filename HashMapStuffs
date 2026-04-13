@@ -5,7 +5,7 @@ public class Main1
     {
       Map<String,Integer> map = new HashMap<>();
      //add values
-        map.put("Orange",202);
+        map.put("Orange",202);  
         map.put("Apple",100);
         map.put("Pear",4);
 
