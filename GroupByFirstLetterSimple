@@ -3,7 +3,7 @@ import java.util.*;
 public class GroupByFirstLetterSimple {
     public static List<List<String>> group(String[] words) {
         Map<Character, List<String>> map = new HashMap<>();
-
+ 
         for (String w : words) {
             char key = w.charAt(0);
  
