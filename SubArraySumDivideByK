@@ -12,7 +12,7 @@ brute
                 count++;
             }
         }
-    }
+    }   
 
     return count;
 }
