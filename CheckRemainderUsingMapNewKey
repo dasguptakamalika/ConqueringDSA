@@ -13,7 +13,7 @@ public class GroupByRemainder {
                 map.put(key, new ArrayList<>());
             }
 
-            // Add number to the list
+            // Add number to the list  
             map.get(key).add(num);
         }
 
