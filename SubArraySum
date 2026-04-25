@@ -6,7 +6,7 @@ class Solution {
 
         int sum = 0;
         int count = 0;
-
+ 
         // Map stores prefix sums and their frequencies
         Map<Integer, Integer> map = new HashMap<>();
         map.put(0, 1); // Base case: sum 0 seen once
