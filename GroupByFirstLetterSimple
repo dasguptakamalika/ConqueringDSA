@@ -6,7 +6,7 @@ public class GroupByFirstLetterSimple {
  
         for (String w : words) {
             char key = w.charAt(0);
- 
+   
             if (!map.containsKey(key)) {
                 map.put(key, new ArrayList<>());
             }
