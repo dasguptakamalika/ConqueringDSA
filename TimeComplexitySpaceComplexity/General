@@ -6,7 +6,7 @@ Pattern	                              SC
 No extra storage	                    O(1)
 Storing n elements (array, map, list)	O(n)
 Storing n² elements	                  O(n²)
-
+  
 
 Simple rule of thumb:
 * Look at your loops for time complexity
