@@ -3,60 +3,16 @@ class Solution {
         Map<String, List<String>> map = new HashMap<>();
         
         for (String s : strs) {
-            // Sort the string to create a key
-            char[] chars = s.toCharArray();
-            Arrays.sort(chars);
-            String key = new String(chars);
-             
-            // If key doesn't exist, create a new list for it
+            char[] ch = s.toCharArray();
+            Arrays.sort(ch);
+            String key = new String(ch);
+            
             if (!map.containsKey(key)) {
                 map.put(key, new ArrayList<>());
             }
-            
-            // Add the original string to the list,That line is what actually puts data into the buckets.
-            //✅ .add() only: works on collections like List ,adds one element of the correct type
             map.get(key).add(s);
         }
         
-        return new ArrayList<>(map.values());   
+        return new ArrayList<>(map.values());
     }
 }
-/* In Java, a Map key can NOT exist without a value.
-So when you do:
-map.put(key, new ArrayList<>());
-you are:
-creating the key
-AND assigning it a value
-that value happens to be an empty ArrayList
-There is no such thing as a “key-only” entry in a Java Map. */
-/*s = "eat"
-chars = ['e','a','t']
-sorted → ['a','e','t']
-key = "aet"
-Map before:
-(empty)
-Key doesn’t exist → create bucket:
-"aet" → []
-Now add value:
-map.get("aet").add("eat");
-Map becomes:
-"aet" → ["eat"]
-Iteration 2
-s = "tea"
-chars = ['t','e','a']
-sorted → ['a','e','t']
-key = "aet"
-Key exists → reuse same bucket
-map.get("aet").add("tea");
-Map now:
-"aet" → ["eat", "tea"]
-Iteration 3
-s = "tan"
-sorted → "ant"
-Key not found → create new bucket:
-"ant" → []
-Add value:
-"ant" → ["tan"]
-Final Map in memory 🧠
-"aet" → ["eat", "tea"]
-"ant" → ["tan"] */
