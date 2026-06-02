@@ -1,0 +1,50 @@
+import java.util.*;
+
+class Solution {
+
+    public List<List<String>> groupAnagrams(String[] strs) {
+
+        // HashMap:
+        // key   -> sorted version of string
+        // value -> list of anagrams
+        Map<String, List<String>> map = new HashMap<>();
+
+
+        // Traverse every string in array
+        for (String s : strs) {
+
+            // Convert string to char array
+            char[] chars = s.toCharArray();
+
+            // Sort characters
+            Arrays.sort(chars);
+
+            // Convert sorted char array back to string
+            // This becomes the key
+            String key = new String(chars);
+
+            /*
+             SHORT HAND:
+             map.computeIfAbsent(key, k -> new ArrayList<>()).add(s);
+
+             FULL FORM:
+
+             if (!map.containsKey(key)) {
+                 map.put(key, new ArrayList<>());
+             }
+
+             map.get(key).add(s);
+            */
+
+            // If key absent -> create new ArrayList
+            // Then add current string into that list
+            map.computeIfAbsent(
+                key,
+                k -> new ArrayList<>()
+            ).add(s);
+        }
+
+        // Return all grouped lists
+        return new ArrayList<>(map.values());
+    }
+}
