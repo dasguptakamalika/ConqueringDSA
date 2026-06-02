@@ -8,3 +8,7 @@ list.add("tea");
 list.add("ate");
 you can simply write:
 List<String> list = Arrays.asList("eat", "tea", "ate");
+
+Arrays.asList() creates a fixed-size List backed by an array.
+We can modify elements using set(), but we cannot add or remove elements.
+If we need a truly dynamic list, we wrap it inside new ArrayList<>(...).
