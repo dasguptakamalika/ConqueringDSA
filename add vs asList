@@ -1,0 +1,10 @@
+What exactly is Arrays.asList()?
+It is a shortcut to quickly make a list.
+Instead of:
+List<String> list = new ArrayList<>();
+
+list.add("eat");
+list.add("tea");
+list.add("ate");
+you can simply write:
+List<String> list = Arrays.asList("eat", "tea", "ate");
