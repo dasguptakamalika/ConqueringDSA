@@ -10,7 +10,7 @@ public class Main1
         map.put("Pear",4);
 
 /*Map is the HashMap that stores your data
-Map.Entry is just used inside the for-each loop to iterate over it
+Map.Entry is just used inside the for-each loop to iterate over it 
  
 Map.Entry doesn't exist on its own — it needs a Map to get the entries from. 
 So you always need the Map first before you can use Map.Entry.
