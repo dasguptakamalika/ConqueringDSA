@@ -4,13 +4,13 @@ class Solution {
 
     public List<List<String>> groupAnagrams(String[] strs) {
 
-        // HashMap:
+        // HashMap:  
         // key   -> character frequency pattern
         // value -> list of anagrams
         Map<String, List<String>> map = new HashMap<>();
 
         // Traverse every string
-        for (String s : strs) {
+        for (String s : strs) { 
 
             // Frequency array for 26 lowercase letters
             int[] freq = new int[26];
