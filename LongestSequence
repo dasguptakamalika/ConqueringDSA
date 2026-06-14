@@ -1,4 +1,4 @@
-import java.util.HashSet;
+  import java.util.HashSet;
 
 class Solution {
     public int longestConsecutive(int[] nums) {   //the caller initialises the arr 
