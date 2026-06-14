@@ -12,7 +12,7 @@ class Solution {
         currentSum = currentSum+nums[j];
         maxSum = Math.max(currentSum,maxSum);
 
-
+  
             }     
              }  
              return maxSum;
