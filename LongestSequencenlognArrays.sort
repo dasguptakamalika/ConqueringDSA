@@ -24,3 +24,13 @@ class Solution {
         return longest;
     }
 }
+Sure — here it is in **few lines**:
+
+* `streak = 1` means: start a new sequence from the current number (single element counts as 1).
+* If next number is `+1`, we do `streak++` → sequence continues.
+* If not, sequence breaks → `streak = 1` resets because the current number starts a new sequence.
+
+👉 So:
+
+* same chain → increase
+* broken chain → restart from 1
