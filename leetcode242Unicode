@@ -1,0 +1,2 @@
+//HashMap can store till "n" elements, hence o(n) is the SPACE complexity
+char[26], char[128] and this HashMap[Chararcter, Integer] 
