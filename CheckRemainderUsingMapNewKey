@@ -14,7 +14,7 @@ public class GroupByRemainder {
             }
 
             // Add number to the list  
-            map.get(key).add(num);
+            map.get(key).add(num);   
         }
 
         // Return all groups as List<List<Integer>>
