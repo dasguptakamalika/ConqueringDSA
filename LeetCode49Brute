@@ -9,7 +9,7 @@ class Solution {
             if (visited[i]) continue; 
             List<String> group = new ArrayList<>();
             group.add(strs[i]);
-
+ 
             for (int j = i + 1; j < strs.length; j++) {
                 if (!visited[j] && isAnagram(strs[i], strs[j])) {
                     group.add(strs[j]);
