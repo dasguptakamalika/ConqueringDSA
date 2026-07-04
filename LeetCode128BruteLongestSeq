@@ -8,7 +8,7 @@
 
             while (contains(nums, current + 1)) {
                 current++;
-                streak++;
+                streak++; 
             }
 
             longest = Math.max(longest, streak);
