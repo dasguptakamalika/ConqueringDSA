@@ -1,0 +1,14 @@
+| Operation                          | Time Complexity |                            Space Complexity | Why?                                                |
+| ---------------------------------- | --------------: | ------------------------------------------: | --------------------------------------------------- |
+| Access (`arr[i]`)                  |        **O(1)** |                                    **O(1)** | Direct address calculation.                         |
+| Update (`arr[i] = x`)              |        **O(1)** |                                    **O(1)** | Replace the value at a known index.                 |
+| Search (unsorted)                  |        **O(n)** |                                    **O(1)** | May need to scan every element.                     |
+| Search (sorted, Binary Search)     |    **O(log n)** |                                    **O(1)** | Repeatedly halves the search space.                 |
+| Traverse                           |        **O(n)** |                                    **O(1)** | Visit every element once.                           |
+| Insert at End (if space available) |        **O(1)** |                                    **O(1)** | Just place the element in the next free slot.       |
+| Insert at Beginning/Middle         |        **O(n)** |                                    **O(1)** | Existing elements must be shifted right.            |
+| Delete from Beginning/Middle       |        **O(n)** |                                    **O(1)** | Remaining elements must be shifted left.            |
+| Delete from End                    |        **O(1)** |                                    **O(1)** | Just reduce the logical size (if managed manually). |
+| Copy (`Arrays.copyOf()`)           |        **O(n)** |                                    **O(n)** | Creates a new array and copies every element.       |
+| Compare (`Arrays.equals()`)        |        **O(n)** |                                    **O(1)** | Compares elements one by one.                       |
+| Sort (`Arrays.sort()`)             |  **O(n log n)** | Typically **O(log n)** for primitive arrays | Uses an efficient sorting algorithm internally.     |
