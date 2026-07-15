@@ -1,0 +1,4 @@
+seen.get(complement) says: "give me the index that was stored under this number."
+
+So .get(key) just fetches whatever value you .put() against that key — in Two Sum, we happened to store indices as values, so that's what comes back.
+
