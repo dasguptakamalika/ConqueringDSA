@@ -21,3 +21,7 @@ class Solution {
         return -1;
     }
 }
+
+
+//Brute force has a time complexity of **`O(n)`** because, in the worst case, it may need to check every element in the array before finding the target or determining that it doesn't exist. If the array contains `n` elements, the loop can run up to `n` times, and each iteration performs only one constant-time comparison (`nums[i] == target`), which is `O(1)`. Therefore, the total work is `n × O(1) = O(n)`. In contrast, binary search is `O(log n)` because it eliminates half of the remaining search space in every iteration instead of checking elements one by one.
+
