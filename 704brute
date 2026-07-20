@@ -1,0 +1,3 @@
+For binary search, an even easier mental model is:
+
+log₂(n) = "How many times can I divide n by 2 before I reach 1?"
