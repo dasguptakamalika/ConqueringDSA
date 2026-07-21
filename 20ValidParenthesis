@@ -1,0 +1,6 @@
+The brute-force approach works by repeatedly scanning the **entire string** for any adjacent valid bracket pair—`"()"`, `"[]"`, or `"{}"`.
+Whenever it finds one, it removes that pair from the string. Removing an inner valid pair can cause the surrounding brackets to become adjacent, 
+creating a new valid pair that can be removed in the next scan. This process continues until either the string becomes empty, meaning every opening
+bracket had a correctly matched closing bracket and the string is valid, or no more valid pairs can be found while characters still remain,
+meaning some brackets are mismatched or in the wrong order and the string is invalid. Rather than matching brackets one by one, 
+the brute-force method simply keeps "peeling away" valid adjacent pairs until it either eliminates the entire string or gets stuck.
