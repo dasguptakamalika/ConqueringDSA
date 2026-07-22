@@ -4,3 +4,33 @@ creating a new valid pair that can be removed in the next scan. This process con
 bracket had a correctly matched closing bracket and the string is valid, or no more valid pairs can be found while characters still remain,
 meaning some brackets are mismatched or in the wrong order and the string is invalid. Rather than matching brackets one by one, 
 the brute-force method simply keeps "peeling away" valid adjacent pairs until it either eliminates the entire string or gets stuck.
+import java.util.Stack;
+
+class Solution {
+    public boolean isValid(String s) {
+
+        Stack<Character> stack = new Stack<>();
+
+        for (char ch : s.toCharArray()) {
+
+            if (ch == '(' || ch == '{' || ch == '[') {
+                stack.push(ch);
+            } else {
+
+                if (stack.isEmpty()) {
+                    return false;
+                }
+
+                char open = stack.pop();
+
+                if ((ch == ')' && open != '(') ||
+                    (ch == '}' && open != '{') ||
+                    (ch == ']' && open != '[')) {
+                    return false;
+                }
+            }
+        }
+
+        return stack.isEmpty();
+    }
+}
