@@ -31,6 +31,14 @@ class Solution {
             }
         }
 
+
+The brute-force solution has a time complexity of **O(n²)** because the algorithm repeatedly scans the entire string to look
+for valid adjacent bracket pairs (`()`, `{}`, or `[]`) and then replaces them. Each call to `contains()` and `replace()` 
+can take **O(n)** time since they may examine every character in the string. In the worst case, only one valid pair is removed during 
+each iteration of the `while` loop, so the loop can run about **n/2** times. Therefore, the algorithm performs **O(n)** work during each 
+of **O(n)** iterations, resulting in an overall time complexity of **O(n²)**.
+
+
         return stack.isEmpty();
     }
 }
