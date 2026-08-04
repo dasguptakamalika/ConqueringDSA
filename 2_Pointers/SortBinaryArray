@@ -5,3 +5,32 @@ In each iteration, the `left` pointer moves forward until it finds a `1` that sh
 it finds a `0` that should be on the left. Once both pointers stop, those two misplaced elements are swapped. The process repeats until the pointers meet or cross. 
 Although there are multiple `while` loops, each pointer only moves in one direction and never revisits an index, so every element is examined at most once.
 This is why the overall time complexity is **O(n)** and the space complexity is **O(1)**.
+
+class Solution {
+
+    public static void sortBinaryArray(int[] arr) {
+
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left < right) {
+
+            while (left < right && arr[left] == 0) {
+                left++;
+            }
+
+            while (left < right && arr[right] == 1) {
+                right--;
+            }
+
+            if (left < right) {
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+
+                left++;
+                right--;
+            }
+        }
+    }
+}
