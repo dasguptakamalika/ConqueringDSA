@@ -6,34 +6,57 @@ it finds a `0` that should be on the left. Once both pointers stop, those two mi
 Although there are multiple `while` loops, each pointer only moves in one direction and never revisits an index, so every element is examined at most once.
 This is why the overall time complexity is **O(n)** and the space complexity is **O(1)**.
 
-class Solution {
+package org.example;
 
-    public static void sortBinaryArray(int[] arr) {
+import java.util.Arrays;
+
+//[0,0,1,0,1]
+public class Main1 {
+
+    public static void binarySort(int[] arr) {
+
 
         int left = 0;
         int right = arr.length - 1;
 
         while (left < right) {
-
             while (left < right && arr[left] == 0) {
                 left++;
             }
-
             while (left < right && arr[right] == 1) {
                 right--;
             }
-
             if (left < right) {
                 int temp = arr[left];
                 arr[left] = arr[right];
                 arr[right] = temp;
-
                 left++;
                 right--;
             }
         }
     }
-}
+
+
+        public static void main (String[] args)
+        {
+            int[] arr = {0, 1, 1,1, 0};
+            binarySort(arr);
+            System.out.println(Arrays.toString(arr));
+        }
+    }
+/*A method call is simply an instruction to execute a method.
+ However, methods are of two types: those that **return a value** and
+ those that **return `void`**. If a method returns a value (for example, an `int`),
+ that value can be used in an expression, assigned to a variable, or passed to
+  `System.out.println()`. For example, `System.out.println(add(2, 3));` works because
+  `add(2, 3)` returns `5`. A `void` method, on the other hand, performs an action but
+  does not return any value. Therefore, `binarySort(arr);` is a valid function call because
+   it executes the sorting logic, but `System.out.println(binarySort(arr));` is invalid because
+   `println()` expects a value to print, and `binarySort(arr)` returns nothing. In this case,
+   the method modifies the original array directly, so after calling `binarySort(arr)`,
+   you print the updated array separately using `System.out.println(Arrays.toString(arr));`.
+ */
+
 
 ............
 import java.util.Arrays;
