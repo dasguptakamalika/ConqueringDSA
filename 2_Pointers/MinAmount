@@ -1,0 +1,27 @@
+package org.example;
+import java.util.*;
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+
+public static int getMinAmount(List<Integer> q)
+{
+Map<Integer,Integer> frequencyMap = new HashMap<>();
+int maxFreq = 0;
+
+for(int value : q)
+{
+    frequencyMap.put(value, frequencyMap.getOrDefault(value,0)+1);
+
+    maxFreq = Math.max(maxFreq, frequencyMap.get(value));
+}
+return q.size()-maxFreq;
+}
+
+    public static void main(String[] args)
+    {
+List<Integer> quality = Arrays.asList(7,7,5,7,3,5,3,2);
+System.out.println(getMinAmount(quality));
+    }
+}
+
