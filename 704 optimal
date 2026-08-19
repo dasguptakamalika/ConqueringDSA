@@ -1,4 +1,4 @@
-and we do this till our mid== target ?
+ and we do this till our mid== target ?
 
 Yes, or until the search space becomes empty.
 class Solution {
