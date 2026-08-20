@@ -9,7 +9,7 @@ public class GroupByRemainder {
             int key = num % 3;
 
             // If key doesn't exist, create new list
-            if (!map.containsKey(key)) {
+            if (!map.containsKey(key)) { 
                 map.put(key, new ArrayList<>());
             }
 
