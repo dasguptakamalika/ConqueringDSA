@@ -18,7 +18,7 @@ Pattern	                           TC
 Single loop	                       O(n)
 Nested loop	                       O(n²)
 Loop inside loop inside loop	     O(n³)
-No loop, just statements           O(1) 
+No loop, just statements           O(1)  
 
 Cutting input in half 
 each step (binary search)          O(log n)
