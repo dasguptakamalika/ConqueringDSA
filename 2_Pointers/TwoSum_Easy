@@ -14,7 +14,7 @@
            
         // According to the problem, a solution always exists 
         return new int[] {};
-    }
+    } 
 }
 //It’s not about the algorithm — it’s about satisfying the compiler’s rule.
 // total time complexity is O(n), where n is the length of nums.
