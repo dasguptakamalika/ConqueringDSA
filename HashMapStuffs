@@ -7,7 +7,7 @@ public class Main1
      //add values
         map.put("Orange",202);  
         map.put("Apple",100);
-        map.put("Pear",4);
+        map.put("Pear",4);   
 
 /*Map is the HashMap that stores your data 
 Map.Entry is just used inside the for-each loop to iterate over it 
