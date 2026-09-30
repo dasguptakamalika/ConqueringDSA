@@ -8,7 +8,7 @@ public static int getMinAmount(List<Integer> q)
 {
 Map<Integer,Integer> frequencyMap = new HashMap<>();
 int maxFreq = 0;
-
+ 
 for(int value : q)
 {
     frequencyMap.put(value, frequencyMap.getOrDefault(value,0)+1);
