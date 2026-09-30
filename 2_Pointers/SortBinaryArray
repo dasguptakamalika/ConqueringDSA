@@ -10,7 +10,7 @@ package org.example;
 
 import java.util.Arrays;
 
-//[0,0,1,0,1]
+//[0,0,1,0,1] try with this
 public class Main1 {
 
     public static void binarySort(int[] arr) {
