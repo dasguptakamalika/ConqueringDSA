@@ -9,7 +9,7 @@ Storing n² elements	                  O(n²)
   
 
 Simple rule of thumb:
-* Look at your loops for time complexity
+* Look at your loops for time complexity 
 * Look at your data structures for space complexity
 
 Time Complexity:
