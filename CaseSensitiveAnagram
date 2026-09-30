@@ -11,7 +11,7 @@
     for (int count : freq) { 
         if (count != 0) return false;
     }
-
+   
     return true;
 }
 /*// Lowercase-only anagram: use int[26] and subtract 'a' to map 'a'->0, 'b'->1, ..., 'z'->25.
