@@ -13,7 +13,7 @@ class Solution {
             for (int j = i + 1; j < strs.length; j++) {
                 if (!visited[j] && isAnagram(strs[i], strs[j])) {
                     group.add(strs[j]);
-                    visited[j] = true;
+                    visited[j] = true; 
                 }
             }
             result.add(group);
