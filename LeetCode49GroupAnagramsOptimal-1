@@ -14,7 +14,7 @@ class Solution {
         for (String s : strs) {
 
             // Convert string to char array
-            char[] chars = s.toCharArray();
+            char[] chars = s.toCharArray();   
 
             // Sort characters
             Arrays.sort(chars);
