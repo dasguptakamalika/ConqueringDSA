@@ -13,6 +13,6 @@
 if (!seen.add(num)) 
    ↓
 "If I CAN'T add this number (because it's already there)"
-   ↓
+   ↓ 
 "Then it's a DUPLICATE!"
 The ! flips the meaning from "added successfully" to "already exists" 🎯
