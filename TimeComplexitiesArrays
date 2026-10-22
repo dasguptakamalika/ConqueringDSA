@@ -12,3 +12,4 @@
 | Copy (`Arrays.copyOf()`)           |        **O(n)** |                                    **O(n)** | Creates a new array and copies every element.       |
 | Compare (`Arrays.equals()`)        |        **O(n)** |                                    **O(1)** | Compares elements one by one.                       |
 | Sort (`Arrays.sort()`)             |  **O(n log n)** | Typically **O(log n)** for primitive arrays | Uses an efficient sorting algorithm internally.     |
+ 
