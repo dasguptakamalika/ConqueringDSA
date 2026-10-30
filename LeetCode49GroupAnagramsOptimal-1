@@ -6,7 +6,7 @@ class Solution {
 
         // HashMap:
         // key   -> sorted version of string
-        // value -> list of anagrams
+        // value -> list of anagrams 
         Map<String, List<String>> map = new HashMap<>();
 
 
