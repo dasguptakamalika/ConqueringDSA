@@ -9,7 +9,7 @@ class Solution {
         HashSet<Integer> set = new HashSet<>(); 
         for (int i = 0; i < nums.length; i++) {
             set.add(nums[i]);
-        }
+        } 
  
         int longest = 0; 
  
