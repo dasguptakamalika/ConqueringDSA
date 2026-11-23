@@ -16,7 +16,7 @@
 
 
 [ left side ]  i  [ right side ]
-0 ......... i-1   i+1 ....... n-1
+0 ......... i-1   i+1 ....... n-1 
 So:
 left loop → j = 0 → i-1
 right loop → j = i+1 → n-1
