@@ -4,7 +4,7 @@ class Solution {
 
     public List<List<String>> groupAnagrams(String[] strs) {
 
-        // HashMap:
+        // HashMap: 
         // key   -> sorted version of string
         // value -> list of anagrams 
         Map<String, List<String>> map = new HashMap<>();
